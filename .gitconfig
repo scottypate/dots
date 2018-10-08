@@ -1,0 +1,9 @@
+[credential]
+	helper = osxkeychain
+[user]
+	name = scottypate
+	email = scottypate@me.com
+[core]
+	autocrlf = input
+[push]
+	default = matching
