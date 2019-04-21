@@ -1,4 +1,3 @@
-# Path to your oh-my-zsh installation.
 export ZSH=/Users/scottypate/.oh-my-zsh
 
 # Set name of the theme to load.
@@ -53,8 +52,8 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-export PATH="$PATH:$HOME/anaconda/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/local/bin"
+
 export PATH="$PATH:/usr/local/go/bin"
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -85,7 +84,26 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias prettyjson='python -m json.tool'
+alias prettyjson="python -m json.tool | pygmentize -l json"
+alias lab="jupyter lab /Users/scottypate/Dropbox/github"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+
+# added by Anaconda3 2018.12 installer
+# >>> conda init >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$(CONDA_REPORT_ERRORS=false '/Users/scottypate/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    \eval "$__conda_setup"
+else
+    if [ -f "/Users/scottypate/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/scottypate/anaconda3/etc/profile.d/conda.sh"
+        CONDA_CHANGEPS1=false conda activate base
+    else
+        \export PATH="/Users/scottypate/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda init <<<
